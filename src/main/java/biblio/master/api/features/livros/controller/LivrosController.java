@@ -86,6 +86,13 @@ public class LivrosController {
         return ResponseEntity.ok(livroAtualizado);
     }
 
+    @DeleteMapping("{idLivro}")
+    public ResponseEntity<void> deletar(@PathVariable Long idLivro){
 
+        Livros livroExcluido = livrosService.deletarLivro(idLivro);
+
+        return ResponseEntity.ok(livrooExcluido);
+
+    }
 
 }

@@ -37,6 +37,9 @@ public class LivrosService {
     }
 
 
+    public Livros deletarLivro(Long idLivro) {
 
-
+        Livros livro = livrosRepository.findById(idLivro).orElseThrow(() -> new RuntimeException("Livro não encontrado com id: " + idLivro));
+        livrosRepository.delete(livro);
+    }
 }
