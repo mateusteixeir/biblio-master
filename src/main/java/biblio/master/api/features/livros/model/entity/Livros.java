@@ -43,6 +43,8 @@ public class Livros {
                 this.editora = dtoLivros.editora();
         }
 
+        private boolean ativo = true;
+
 
 
 }

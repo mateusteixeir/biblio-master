@@ -1,5 +1,6 @@
 package biblio.master.api.features.genero.model.entity;
 
+import biblio.master.api.features.genero.model.dto.DadosCadastroGeneros;
 import biblio.master.api.features.genero.model.dto.GenerosDto;
 import biblio.master.api.features.livros.model.entity.Livros;
 import com.fasterxml.jackson.annotation.JsonBackReference;
@@ -30,7 +31,7 @@ public class Generos {
     @JsonBackReference
     private Set<Livros> livros;
 
-    public Generos(GenerosDto dtoGeneros) {
+    public Generos(DadosCadastroGeneros dtoGeneros) {
         this.titulo = dtoGeneros.titulo();
     }
 }

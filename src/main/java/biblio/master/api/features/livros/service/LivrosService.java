@@ -35,11 +35,21 @@ public class LivrosService {
 
 
     }
+    /*
+    //deleção de livro
+    public Livros deletarLivro(Long idLivro) {
+
+        Livros livro = livrosRepository.findById(idLivro).orElseThrow(() -> new RuntimeException("Livro não encontrado com id: " + idLivro));
+        livrosRepository.delete(livro);
+    }
+    */
+    //deleção lógica
 
 
     public Livros deletarLivro(Long idLivro) {
 
         Livros livro = livrosRepository.findById(idLivro).orElseThrow(() -> new RuntimeException("Livro não encontrado com id: " + idLivro));
-        livrosRepository.delete(livro);
+        livro.setAtivo(false);
+        return livrosRepository.save(livro);
     }
 }
